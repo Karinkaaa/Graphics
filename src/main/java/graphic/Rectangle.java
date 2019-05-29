@@ -1,3 +1,5 @@
+package graphic;
+
 import java.awt.*;
 
 public class Rectangle extends Figure {
@@ -15,10 +17,11 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public void draw(Graphics g) {
+    public void draw(Graphics g, boolean filled) {
 
-        Graphics2D g2 = (Graphics2D)g;
-        g2.setPaint(Color.magenta);
-        g.fillRect(startX, startY, width, height);
+        if (filled)
+            g.fillRect(startX, startY, width, height);
+
+        g.drawRect(startX, startY, width, height);
     }
 }
